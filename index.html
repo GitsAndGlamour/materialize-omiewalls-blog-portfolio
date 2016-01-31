@@ -1,35 +1,139 @@
-<html lang="en" >
+<!doctype html>
+<html lang="en">
+
 <head>
-  <!-- Angular Material style sheet -->
-  <link rel="stylesheet" href="js/angular/angular-material/angular-material.min.css">
-      <!-- Require Angular.js Libraries -->
-  <script src="js/angular/angular/angular.min.js"></script>
-  <script src="js/angular/angular-animate/angular-animate.min.js"></script>
-  <script src="js/angular/angular-aria/angular-aria.min.js"></script>
-  <script src="js/angular/angular-messages/angular-messages.min.js"></script>
-  <script src="js/angular/angular-route/angular-route.min.js"></script>
-  <!-- Angular Material Library -->
-  <script src="js/angular/angular-material/angular-material.min.js"></script>
-  <!-- Controllers -->
-  <script src="js/app.js"></script>
-  <script src="js/controller/registration.js"</script>
-  <script src="js/controller/blog.js"</script>
-  <script src="js/controller/portfolio.js"</script>
-  <script src="js/controller/resume.js"</script>
-  <script src="js/controller/events.js"</script>
+
+    <!-- Require Angular.js Libraries -->
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/angular/angular/angular.min.js"></script>
+    <script src="js/angular/angular-animate/angular-animate.min.js"></script>
+    <script src="js/angular/angular-aria/angular-aria.min.js"></script>
+    <script src="js/angular/angular-messages/angular-messages.min.js"></script>
+    <script src="js/angular/angular-route/angular-route.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/app.js"></script>
+    <script src="js/controller/controller.js"></script>
+
 </head>
-<body ng-app="blogPortfolio" ng-cloak>
+
+<body ng-app="blogPortfolio">
+
+    <heder>
+        <!-- TODO: Navigation Bar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- TODO: Mobile Toggle Menu -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Brand -->
+                    <a class="navbar-brand" ng-href="#/home">OmieWalls.com</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
+                    <ul class="nav navbar-nav">
+                        <li><a ng-href="#/home">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a ng-href="#/about">About</a></li>
+                        <li class="dropdown">
+                            <a ng-href="#/blog" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a class="blog-types" ng-href="#/blog/:career">Career</a></li>
+                                <li><a class="blog-types" ng-href="#/blog/:personal">Personal</a></li>
+                                <li class="divider"></li>
+                                <li><a class="blog-types" ng-href="#/blog/:art">Art</a></li>
+                                <li class="divider"></li>
+                                <li><a class="blog-types" ng-href="#/blog/:tumblr">Tumblr</a></li>
+                                <li><a class="blog-types" ng-href="#/blog/:blogger">Blogger</a></li>
+                                <li><a class="blog-types" ng-href="#/blog/:medium">Medium</a></li>
+                            </ul>
+                        </li>
+                        <li><a ng-href="#/portfolio">Portfolio</a></li>
+                        <li><a ng-href="#/resume">Resume</a></li>
+                        <li><a ng-href="#/contact">Contact</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Theme Selection -->
+                        <li class="dropdown">
+                            <a ng-href="##" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Theme<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" id="bootstrapcdn-themes">
+                                <li><a class="theme-links" ng-href="##">Default</a></li>
+                                <li class="divider"></li>
+                                <li><a class="theme-links" ng-href="##">Cerulean</a></li>
+                                <li><a class="theme-links" ng-href="##">Cosmo</a></li>
+                                <li><a class="theme-links" ng-href="##">Cyborg</a></li>
+                                <li><a class="theme-links" ng-href="##">Darkly</a></li>
+                                <li><a class="theme-links" ng-href="##">Flatly</a></li>
+                                <li><a class="theme-links" ng-href="##">Journal</a></li>
+                                <li><a class="theme-links" ng-href="##">Lumen</a></li>
+                                <li><a class="theme-links" ng-href="##">Paper</a></li>
+                                <li><a class="theme-links" ng-href="##">Readable</a></li>
+                                <li><a class="theme-links" ng-href="##">Sandstone</a></li>
+                                <li><a class="theme-links" ng-href="##">Simplex</a></li>
+                                <li><a class="theme-links" ng-href="##">Slate</a></li>
+                                <li><a class="theme-links" ng-href="##">Spacelab</a></li>
+                                <li><a class="theme-links" ng-href="##">Superhero</a></li>
+                                <li><a class="theme-links" ng-href="##">United</a></li>
+                                <li><a class="theme-links" ng-href="##">Yeti</a></li>
+                            </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- TODO: Side Bar -->
+        <div class="well well-sm" id="sidebar">
+            <h4>Useful Resources</h4>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Resources</a></li>
+                <ul id="inner-sidebar" class="nav nav-pills nav-stacked">
+                    <li><a class="text-info" href="#">Tutorials</a></li>
+                    <li><a class="text-info" href="#">Articles</a></li>
+                    <li><a class="text-info" href="#">Applications</a></li>
+                    <li class="divider"></li>
+                    <li><a class="text-info" href="#">Atlanta Events</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+
+    </heder>
+
+    <!-- Paage Content -->
+    <main class="page ">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Wecome to my blog!</h3>
+            </div>
+            <div class="panel-body ng-view">
+                Welcome to my blog!
+            </div>
+        </div>
 
 
-    
-   <!-- Paage Content -->  
-    <div class="page">
-        <div class="ng-view"> Index Page</div>
-    </div>
+    </main>
+
+    <footer class="panel-footer">
+        <a href="http://someting.com/something"><img class="icon-handles" src="img/icons/twitter_filled.png" /></a>
+        <a href="http://someting.com/something"><img class="icon-handles" src="img/icons/facebook_filled.png" /></a>
+        <a href="http://someting.com/something"><img class="icon-handles" src="img/icons/github_filled.png" /></a>
+        <a href="http://someting.com/something"><img class="icon-handles" src="img/icons/linkedin_filled.png" /></a>
+        <span class="right">Omie Walls &copy;</span>
+    </footer>
+    <!-- BootstrapCDN Framework (Flatly Theme) -->
+    <link id="bootstrapcdn-link" href="http://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/css/style.css" rel="stylesheet">
 </body>
-</html>
 
-<!--
-Copyright 2016 Google Inc. All Rights Reserved. 
-Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
--->
+</html>
