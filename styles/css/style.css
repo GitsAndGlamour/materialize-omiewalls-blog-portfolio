@@ -1,0 +1,48 @@
+#sidebar {
+    width: 12%;
+    height: auto;
+    right: 2%;
+    position: absolute;
+}
+#inner-sidebar {
+    margin-left: 5%;
+    font-size: 0.9em;
+}
+#sidebar h4 {
+    padding-left: 5%; 
+    font-size: 1.1em;
+}
+main {
+    width: 85%;
+    height: 70%;
+    padding-left: 3%;
+}
+.right {
+   position: absolute;
+   right: 2%;
+}
+.icon-handles {
+    width: 30px;
+    height: 30px;
+}
+iframe {
+    height: 500px;
+    width: 100%;
+    margin: auto;
+}
+.portfolio-alerts {
+    width: 50%;
+}
+#treehouse-alert {
+}
+#lynda-alert {
+    margin-left: 10%;
+}
+
+#uwm-jumbo {
+    padding: 2%;
+}
+
+#tutorials-summary {
+    display: flex;
+}
